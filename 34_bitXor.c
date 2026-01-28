@@ -9,6 +9,7 @@
  */
 int bitXor(int x, int y)
 {
+    // (x|y) & ~(x&y)
     return (~(~(x & ~y) & ~(~x & y)));
 }
 
