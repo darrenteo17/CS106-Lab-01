@@ -10,7 +10,12 @@
  */
 int upperBits(int n)
 {
-    return 2;
+    // 1000 0000 0000 0000 0000
+    // 1100 0000 0000 0000 0000 0 
+    return (!!n) | ((1 << 31) >> (n+(-1)) );
+    // when n = 0;
+    //          0000 0000 0000 0000 0000
+    //return ~(~0 >> n);
 }
 
 int test_upperBits(int x)

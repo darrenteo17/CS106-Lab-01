@@ -8,12 +8,14 @@
  */
 int tmax(void)
 {
-    return 2;
+    return !(1 << 28);
 }
 
 int test_tmax(void)
 {
     return 0x7FFFFFFF;
+    // 0111 1111 1111 1111 1111 1111
+    // 1000 0000 0000 0000 0000 0000
 }
 
 int main(void)

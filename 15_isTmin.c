@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 /*
  * isTmin - returns 1 if x is the minimum, two's complement number,
@@ -9,7 +10,12 @@
  */
 int isTmin(int x)
 {
-    return 2;
+    return !(x ^ (1 << 31));
+    // 1000 0000 0000 0000
+    // 0000 0000 0000 0001
+    
+    // 0111 1111 1111 1111
+    // 0000 0000 0000 0001
 }
 
 int test_isTmin(int x)
@@ -19,7 +25,7 @@ int test_isTmin(int x)
 
 int main(void)
 {
-    int x = 0;
+    int x = INT_MIN;
     printf("expected: %x\n", isTmin(x));
     printf("actual  : %x\n", test_isTmin(x));
 }
